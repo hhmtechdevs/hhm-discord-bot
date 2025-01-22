@@ -11,7 +11,6 @@ const rest = new REST().setToken(DISCORD_BOT_TOKEN);
 (async () => {
   try {
     console.log(`Started refreshing ${commands.size} application (/) commands.`);
-    console.log(...commands)
 
     const data: any = await rest.put(
       Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
