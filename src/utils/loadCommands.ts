@@ -15,7 +15,7 @@ export const loadCommands = (commands: Command[] | Map<string, Command>) => {
 
       if ('data' in command && 'execute' in command) {
         if (Array.isArray(commands)) {
-          commands.push(command.data.toJSON());
+          commands.push(command.data)
         }
         else {
           commands.set(command.data.name, command)

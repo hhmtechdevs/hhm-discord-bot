@@ -8,7 +8,7 @@ const ping: Command = {
     options: [
       {
         name: 'rating',
-        type: 2,
+        type: 3,
         description: 'Your current mood rating',
         required: true
       }

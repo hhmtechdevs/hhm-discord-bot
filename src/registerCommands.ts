@@ -3,14 +3,14 @@ import { loadCommands } from './utils/loadCommands'
 import { Command } from './typings/Command'
 import { CLIENT_ID, DISCORD_BOT_TOKEN, GUILD_ID } from './config';
 
-const commands = new Map<string, Command>();
+const commands: Command[] = []
 loadCommands(commands)
 
 const rest = new REST().setToken(DISCORD_BOT_TOKEN);
 
 (async () => {
   try {
-    console.log(`Started refreshing ${commands.size} application (/) commands.`);
+    console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
     const data: any = await rest.put(
       Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
