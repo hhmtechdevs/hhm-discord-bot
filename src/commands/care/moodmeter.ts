@@ -1,9 +1,9 @@
 import { CommandInteraction, } from 'discord.js'
 import { Command } from '../../typings/Command'
 
-const ping: Command = {
+const moodmeter: Command = {
   data: {
-    name: 'mood',
+    name: 'moodmeter',
     description: 'rate your mood',
   },
   execute: async (interaction: CommandInteraction) => {
@@ -12,4 +12,4 @@ const ping: Command = {
   },
 }
 
-export default ping
+export default moodmeter

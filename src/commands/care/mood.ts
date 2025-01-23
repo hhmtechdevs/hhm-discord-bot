@@ -1,7 +1,7 @@
 import { CommandInteraction, } from 'discord.js'
 import { Command } from '../../typings/Command'
 
-const ping: Command = {
+const mood: Command = {
   data: {
     name: 'mood',
     description: 'rate your mood',
@@ -20,4 +20,4 @@ const ping: Command = {
   },
 }
 
-export default ping
+export default mood
