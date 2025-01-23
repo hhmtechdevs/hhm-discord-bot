@@ -3,7 +3,7 @@ import { Command } from './typings/Command'
 
 import './registerCommands'
 import { loadCommands } from './utils/loadCommands'
-import { DISCORD_BOT_TOKEN } from './config'
+import { CONFIG } from './config'
 
 const startBot = () => {
   const app = new Client({
@@ -40,7 +40,7 @@ const startBot = () => {
     }
   })
 
-  app.login(DISCORD_BOT_TOKEN)
+  app.login(CONFIG.DISCORD_BOT_TOKEN)
 }
 
 startBot()

@@ -1,19 +1,19 @@
 import { REST, Routes } from 'discord.js'
 import { loadCommands } from './utils/loadCommands'
 import { Command } from './typings/Command'
-import { CLIENT_ID, DISCORD_BOT_TOKEN, GUILD_ID } from './config';
+import { CONFIG } from './config';
 
 const commands: Command[] = []
 loadCommands(commands)
 
-const rest = new REST().setToken(DISCORD_BOT_TOKEN);
+const rest = new REST().setToken(CONFIG.DISCORD_BOT_TOKEN);
 
 (async () => {
   try {
     console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
     const data: any = await rest.put(
-      Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
+      Routes.applicationGuildCommands(CONFIG.CLIENT_ID, CONFIG.GUILD_ID),
       { body: commands },
     );
 
