@@ -2,10 +2,27 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-export const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN || ''
-export const CLIENT_ID = process.env.CLIENT_ID || ''
-export const GUILD_ID = process.env.GUILD_ID || ''
+const {
+  DISCORD_BOT_TOKEN = "",
+  CLIENT_ID = "",
+  GUILD_ID = ""
+} = process.env
 
-export const COLORS = Object.freeze({
-  PRIMARY_COLOR: 0x0099ff
-})
+enum ENotificationColors {
+  PRIMARY_COLOR = "#0099ff"
+}
+
+const SOCIAL_LINKS = {
+  WEBSITE: '**Website: [Click to Visit](https://hhm-front-end.vercel.app/)**',
+  REDDIT: `**Reddit: [Click to Visit](https://www.reddit.com/r/healingheartsminds/)**`,
+  INSTAGRAM: '**Instagram: [Click to Visit]()',
+  TIKTOK: '',
+}
+
+export const CONFIG = {
+  DISCORD_BOT_TOKEN,
+  CLIENT_ID,
+  GUILD_ID,
+  ENotificationColors,
+  SOCIAL_LINKS
+}
