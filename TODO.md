@@ -1,0 +1,3 @@
+- [ ] Add database for /mood
+- [ ] Add AI to generate random roasts for /roastmyex
+- [ ] Add a /nohelpline command
