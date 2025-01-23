@@ -7,6 +7,7 @@ const feel: Command = {
     name: 'feel',
     description: 'the feel wheel',
   },
+
   execute: async (interaction: CommandInteraction) => {
     const embed = new EmbedBuilder().setColor(CONFIG.ENotificationColors.PRIMARY_COLOR)
       .setTitle('The Feel Wheel')
