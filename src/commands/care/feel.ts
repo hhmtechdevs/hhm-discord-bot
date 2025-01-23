@@ -1,5 +1,6 @@
-import { CommandInteraction, } from 'discord.js'
+import { CommandInteraction, EmbedBuilder, } from 'discord.js'
 import { Command } from '../../typings/Command'
+import { THEME_COLOR } from '../../config'
 
 const feel: Command = {
   data: {
@@ -7,7 +8,12 @@ const feel: Command = {
     description: 'the feel wheel',
   },
   execute: async (interaction: CommandInteraction) => {
-    await interaction.reply(`Name 2 or 3 feelings that closely describe how you're currently feeling from the good old Feel Wheel: https://www.reddit.com/r/healingheartsminds/s/7xyV7EcSb5`)
+    const embed = new EmbedBuilder().setColor(THEME_COLOR)
+      .setTitle('The Feel Wheel')
+      .setDescription(`Name 2 or 3 feelings that closely describe how you're currently feeling from the good old Feel Wheel:`)
+      .setImage('https://i.redd.it/hfhc3k6g12x91.jpg')
+
+    await interaction.reply({ embeds: [embed] })
   },
 }
 
