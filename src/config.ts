@@ -15,8 +15,8 @@ enum ENotificationColors {
 const SOCIAL_LINKS = {
   WEBSITE: '**Website: [Click to Visit](https://hhm-front-end.vercel.app/)**',
   REDDIT: `**Reddit: [Click to Visit](https://www.reddit.com/r/healingheartsminds/)**`,
-  INSTAGRAM: '**Instagram: [Click to Visit]()',
-  TIKTOK: '',
+  INSTAGRAM: '**Instagram: [Click to Visit](https://www.instagram.com/casthhm/)**',
+  TIKTOK: '**TikTok: [Click to Visit](https://www.tiktok.com/@healingheartsminds)**',
 }
 
 export const CONFIG = {
