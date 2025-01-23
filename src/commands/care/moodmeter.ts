@@ -1,5 +1,6 @@
-import { CommandInteraction, } from 'discord.js'
+import { CommandInteraction, EmbedBuilder, } from 'discord.js'
 import { Command } from '../../typings/Command'
+import { CONFIG } from '../../config'
 
 const moodmeter: Command = {
   data: {
@@ -7,8 +8,12 @@ const moodmeter: Command = {
     description: 'rate your mood',
   },
   execute: async (interaction: CommandInteraction) => {
-    const reply = "Good Morning Afternoon Evening. How are we all doing on scale of 1-10? 10 being good. @here"
-    await interaction.reply(reply)
+    const embed = new EmbedBuilder()
+      .setTitle("Mood Meter")
+      .setColor(CONFIG.ENotificationColors.PRIMARY_COLOR)
+      .setDescription("Good Morning Afternoon Evening. How are we all doing on scale of 1-10? 10 being good. @here")
+
+    await interaction.reply({ embeds: [embed] })
   },
 }
 
