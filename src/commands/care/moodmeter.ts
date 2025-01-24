@@ -11,9 +11,13 @@ const moodmeter: Command = {
     const embed = new EmbedBuilder()
       .setTitle("Mood Meter")
       .setColor(CONFIG.ENotificationColors.PRIMARY_COLOR)
-      .setDescription("Good Morning Afternoon Evening. How are we all doing on scale of 1-10? 10 being good. @here")
+      .setDescription("Good Morning Afternoon Evening. How are we all doing on scale of 1-10? 10 being good.")
 
-    await interaction.reply({ embeds: [embed] })
+    await interaction.reply({
+      content: '@here',
+      embeds: [embed],
+      allowedMentions: { parse: ['everyone'] }
+    })
   },
 }
 

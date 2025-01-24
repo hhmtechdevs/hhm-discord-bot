@@ -10,8 +10,9 @@ const startBot = () => {
     intents: [
       GatewayIntentBits.Guilds,
       GatewayIntentBits.GuildMessages,
-      GatewayIntentBits.GuildMembers
-    ]
+      GatewayIntentBits.GuildMembers,
+      GatewayIntentBits.MessageContent
+    ],
   })
 
   const commands = new Map<string, Command>()
