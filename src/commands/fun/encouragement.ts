@@ -5,7 +5,7 @@ import { Command } from '../../typings/Command'
 const encouragement: Command = {
   data: {
     name: 'encouragement',
-    description: 'Sends a random message to roast your ex',
+    description: 'Sends a short encouragement message',
   },
 
   execute: async (interaction: CommandInteraction) => {
