@@ -1,6 +1,6 @@
 import { CommandInteraction } from 'discord.js'
-import { encouragements } from "../../data/encouragements.json"
 import { Command } from '../../typings/Command'
+import { API } from '../../api'
 
 const encouragement: Command = {
   data: {
@@ -9,7 +9,7 @@ const encouragement: Command = {
   },
 
   execute: async (interaction: CommandInteraction) => {
-    await interaction.reply(encouragements[Math.floor(Math.random() * encouragements.length)])
+    await interaction.reply(await API.getEncouragement())
   },
 }
 

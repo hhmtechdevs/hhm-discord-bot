@@ -1,6 +1,6 @@
 import { CommandInteraction } from 'discord.js'
-import { roasts } from "../../data/roasts.json"
 import { Command } from '../../typings/Command'
+import { API } from '../../api'
 
 //TODO: Add traits as an option to make customized roasts
 const roastmyex: Command = {
@@ -10,8 +10,7 @@ const roastmyex: Command = {
   },
 
   execute: async (interaction: CommandInteraction) => {
-    const randomRoast = roasts[Math.floor(Math.random() * roasts.length)]
-    await interaction.reply(randomRoast)
+    await interaction.reply(await API.getRoast())
   },
 }
 
